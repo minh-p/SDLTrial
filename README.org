@@ -1,0 +1,8 @@
+#+title: SLDTrial
+
+This repository records my initial experience with SDL.
+I will be using mainly C++.
+It is going to house many C projects as I explore game development, and computer graphics.
+I am also learning basic C/C++ tooling like CMake.
+
+I hope this is going to make me a tremendously better programmer - minh-p 5/16/2025
