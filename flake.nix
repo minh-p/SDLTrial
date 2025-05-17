@@ -31,6 +31,7 @@
               sdl3
               bear
               pkg-config
+              shaderc
             ] ++ (if system == "aarch64-darwin" then [ ] else [ gdb ]);
           shellHook = ''
             FLAKE_ROOT="$(git rev-parse --show-toplevel)"
