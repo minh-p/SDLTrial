@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.24)
 
 project(
-  Platformer
+  Triangle
   VERSION 1.0
   LANGUAGES CXX
 )
@@ -45,9 +45,9 @@ function(add_shaders TARGET_NAME)
   )
 endfunction()
 
-add_shaders(PlatformerShaders shaders/vertex.vert)
-add_executable(Platformer src/main.cpp)
-add_dependencies(Platformer PlatformerShaders)
+add_shaders(TriangleShaders shaders/vertex.vert shaders/fragment.frag)
+add_executable(Triangle src/main.cpp)
+add_dependencies(Triangle TriangleShaders)
 
-target_link_libraries(Platformer PRIVATE SDL3)
-install(TARGETS Platformer DESTINATION bin)
+target_link_libraries(Triangle PRIVATE SDL3)
+install(TARGETS Triangle DESTINATION bin)
