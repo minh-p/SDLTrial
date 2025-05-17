@@ -5,3 +5,4 @@ tmp/
 
 .clangd
 .gdb_history
+**/result
