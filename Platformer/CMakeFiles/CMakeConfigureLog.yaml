@@ -1,0 +1,232 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Linux - 6.6.89 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /run/current-system/sw/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /home/hmp/Projects/SDLTrial/Platformer/CMakeFiles/3.30.5/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/hmp/Projects/SDLTrial/Platformer/CMakeFiles/CMakeScratch/TryCompile-In9yyp"
+      binary: "/home/hmp/Projects/SDLTrial/Platformer/CMakeFiles/CMakeScratch/TryCompile-In9yyp"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/run/current-system/sw/bin/clang-scan-deps"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/hmp/Projects/SDLTrial/Platformer/CMakeFiles/CMakeScratch/TryCompile-In9yyp'
+        
+        Run Build Command(s): /nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/bin/cmake -E env VERBOSE=1 /run/current-system/sw/bin/make -f Makefile cmTC_cc31f/fast
+        /run/current-system/sw/bin/make  -f CMakeFiles/cmTC_cc31f.dir/build.make CMakeFiles/cmTC_cc31f.dir/build
+        make[1]: Entering directory '/home/hmp/Projects/SDLTrial/Platformer/CMakeFiles/CMakeScratch/TryCompile-In9yyp'
+        Building CXX object CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o
+        /run/current-system/sw/bin/c++   -v -MD -MT CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o -c /nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp
+        clang version 18.1.8
+        Target: x86_64-unknown-linux-gnu
+        Thread model: posix
+        InstalledDir: /nix/store/syq780s92whd4jzbgycq719vcjy5hhhf-clang-18.1.8/bin
+        Found candidate GCC installation: /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0
+        Found candidate GCC installation: /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0
+        Selected GCC installation: /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/nix/store/syq780s92whd4jzbgycq719vcjy5hhhf-clang-18.1.8/bin/clang++" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/hmp/Projects/SDLTrial/Platformer/CMakeFiles/CMakeScratch/TryCompile-In9yyp -v -fcoverage-compilation-dir=/home/hmp/Projects/SDLTrial/Platformer/CMakeFiles/CMakeScratch/TryCompile-In9yyp -nostdsysteminc -resource-dir /nix/store/piy3c3g0f6diyl0wqxxlvc8mwi2pawbl-clang-wrapper-18.1.8/resource-root -dependency-file CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -idirafter /nix/store/rvdy4vnkwfk65p104q1bdpslgrjl7yp4-glibc-2.40-66-dev/include -isystem /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0 -isystem /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0/x86_64-unknown-linux-gnu -internal-isystem /nix/store/piy3c3g0f6diyl0wqxxlvc8mwi2pawbl-clang-wrapper-18.1.8/resource-root/include -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o -x c++ /nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target x86_64-unknown-linux-gnu
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0
+         /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0/x86_64-unknown-linux-gnu
+         /nix/store/piy3c3g0f6diyl0wqxxlvc8mwi2pawbl-clang-wrapper-18.1.8/resource-root/include
+         /nix/store/rvdy4vnkwfk65p104q1bdpslgrjl7yp4-glibc-2.40-66-dev/include
+        End of search list.
+        Linking CXX executable cmTC_cc31f
+        /nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc31f.dir/link.txt --verbose=1
+        /run/current-system/sw/bin/c++  -v -Wl,-v CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_cc31f
+        clang version 18.1.8
+        Target: x86_64-unknown-linux-gnu
+        Thread model: posix
+        InstalledDir: /nix/store/syq780s92whd4jzbgycq719vcjy5hhhf-clang-18.1.8/bin
+        Found candidate GCC installation: /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0
+        Found candidate GCC installation: /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0
+        Selected GCC installation: /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/nix/store/99j1fr95xf5xkqgpw5kjwx484118a5xd-binutils-wrapper-2.43.1/bin/ld" --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -pie -o cmTC_cc31f /nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/Scrt1.o /nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/crti.o /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0/crtbeginS.o -L/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib -L/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0 -L/nix/store/w47x7y9xjgq7n3171ckg722ddwf2pi3v-gcc-13.3.0-lib/lib -L/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0//lib -L/nix/store/bdsrlavadkx74k9ps4add4g67y569y1r-gcc-13.3.0-libgcc/lib -L/nix/store/gycadk6zpxxna884fidy3cg6qpx0cfhn-clang-18.1.8-lib/lib -L/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0 -L/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0/../../../../lib64 -L/lib/../lib64 -L/lib -dynamic-linker=/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/ld-linux-x86-64.so.2 -v CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0/crtendS.o /nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/crtn.o
+        GNU ld (GNU Binutils) 2.43.1
+        make[1]: Leaving directory '/home/hmp/Projects/SDLTrial/Platformer/CMakeFiles/CMakeScratch/TryCompile-In9yyp'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0]
+          add: [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0/x86_64-unknown-linux-gnu]
+          add: [/nix/store/piy3c3g0f6diyl0wqxxlvc8mwi2pawbl-clang-wrapper-18.1.8/resource-root/include]
+          add: [/nix/store/rvdy4vnkwfk65p104q1bdpslgrjl7yp4-glibc-2.40-66-dev/include]
+        end of search list found
+        collapse include dir [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0] ==> [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0]
+        collapse include dir [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0/x86_64-unknown-linux-gnu] ==> [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0/x86_64-unknown-linux-gnu]
+        collapse include dir [/nix/store/piy3c3g0f6diyl0wqxxlvc8mwi2pawbl-clang-wrapper-18.1.8/resource-root/include] ==> [/nix/store/piy3c3g0f6diyl0wqxxlvc8mwi2pawbl-clang-wrapper-18.1.8/resource-root/include]
+        collapse include dir [/nix/store/rvdy4vnkwfk65p104q1bdpslgrjl7yp4-glibc-2.40-66-dev/include] ==> [/nix/store/rvdy4vnkwfk65p104q1bdpslgrjl7yp4-glibc-2.40-66-dev/include]
+        implicit include dirs: [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0;/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0/x86_64-unknown-linux-gnu;/nix/store/piy3c3g0f6diyl0wqxxlvc8mwi2pawbl-clang-wrapper-18.1.8/resource-root/include;/nix/store/rvdy4vnkwfk65p104q1bdpslgrjl7yp4-glibc-2.40-66-dev/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/hmp/Projects/SDLTrial/Platformer/CMakeFiles/CMakeScratch/TryCompile-In9yyp']
+        ignore line: []
+        ignore line: [Run Build Command(s): /nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/bin/cmake -E env VERBOSE=1 /run/current-system/sw/bin/make -f Makefile cmTC_cc31f/fast]
+        ignore line: [/run/current-system/sw/bin/make  -f CMakeFiles/cmTC_cc31f.dir/build.make CMakeFiles/cmTC_cc31f.dir/build]
+        ignore line: [make[1]: Entering directory '/home/hmp/Projects/SDLTrial/Platformer/CMakeFiles/CMakeScratch/TryCompile-In9yyp']
+        ignore line: [Building CXX object CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/run/current-system/sw/bin/c++   -v -MD -MT CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o -c /nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang version 18.1.8]
+        ignore line: [Target: x86_64-unknown-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /nix/store/syq780s92whd4jzbgycq719vcjy5hhhf-clang-18.1.8/bin]
+        ignore line: [Found candidate GCC installation: /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0]
+        ignore line: [Found candidate GCC installation: /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0]
+        ignore line: [Selected GCC installation: /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/nix/store/syq780s92whd4jzbgycq719vcjy5hhhf-clang-18.1.8/bin/clang++" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/hmp/Projects/SDLTrial/Platformer/CMakeFiles/CMakeScratch/TryCompile-In9yyp -v -fcoverage-compilation-dir=/home/hmp/Projects/SDLTrial/Platformer/CMakeFiles/CMakeScratch/TryCompile-In9yyp -nostdsysteminc -resource-dir /nix/store/piy3c3g0f6diyl0wqxxlvc8mwi2pawbl-clang-wrapper-18.1.8/resource-root -dependency-file CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -idirafter /nix/store/rvdy4vnkwfk65p104q1bdpslgrjl7yp4-glibc-2.40-66-dev/include -isystem /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0 -isystem /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0/x86_64-unknown-linux-gnu -internal-isystem /nix/store/piy3c3g0f6diyl0wqxxlvc8mwi2pawbl-clang-wrapper-18.1.8/resource-root/include -fdeprecated-macro -ferror-limit 19 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o -x c++ /nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 18.1.8 based upon LLVM 18.1.8 default target x86_64-unknown-linux-gnu]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0]
+        ignore line: [ /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/include/c++/13.3.0/x86_64-unknown-linux-gnu]
+        ignore line: [ /nix/store/piy3c3g0f6diyl0wqxxlvc8mwi2pawbl-clang-wrapper-18.1.8/resource-root/include]
+        ignore line: [ /nix/store/rvdy4vnkwfk65p104q1bdpslgrjl7yp4-glibc-2.40-66-dev/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_cc31f]
+        ignore line: [/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc31f.dir/link.txt --verbose=1]
+        ignore line: [/run/current-system/sw/bin/c++  -v -Wl -v CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_cc31f]
+        ignore line: [clang version 18.1.8]
+        ignore line: [Target: x86_64-unknown-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /nix/store/syq780s92whd4jzbgycq719vcjy5hhhf-clang-18.1.8/bin]
+        ignore line: [Found candidate GCC installation: /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0]
+        ignore line: [Found candidate GCC installation: /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0]
+        ignore line: [Selected GCC installation: /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/nix/store/99j1fr95xf5xkqgpw5kjwx484118a5xd-binutils-wrapper-2.43.1/bin/ld" --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -pie -o cmTC_cc31f /nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/Scrt1.o /nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/crti.o /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0/crtbeginS.o -L/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib -L/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0 -L/nix/store/w47x7y9xjgq7n3171ckg722ddwf2pi3v-gcc-13.3.0-lib/lib -L/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0//lib -L/nix/store/bdsrlavadkx74k9ps4add4g67y569y1r-gcc-13.3.0-libgcc/lib -L/nix/store/gycadk6zpxxna884fidy3cg6qpx0cfhn-clang-18.1.8-lib/lib -L/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0 -L/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0/../../../../lib64 -L/lib/../lib64 -L/lib -dynamic-linker=/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/ld-linux-x86-64.so.2 -v CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0/crtendS.o /nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/crtn.o]
+          arg [/nix/store/99j1fr95xf5xkqgpw5kjwx484118a5xd-binutils-wrapper-2.43.1/bin/ld] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_cc31f] ==> ignore
+          arg [/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/Scrt1.o] ==> obj [/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/Scrt1.o]
+          arg [/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/crti.o] ==> obj [/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/crti.o]
+          arg [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0/crtbeginS.o] ==> obj [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0/crtbeginS.o]
+          arg [-L/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib] ==> dir [/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib]
+          arg [-L/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0] ==> dir [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0]
+          arg [-L/nix/store/w47x7y9xjgq7n3171ckg722ddwf2pi3v-gcc-13.3.0-lib/lib] ==> dir [/nix/store/w47x7y9xjgq7n3171ckg722ddwf2pi3v-gcc-13.3.0-lib/lib]
+          arg [-L/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0//lib] ==> dir [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0//lib]
+          arg [-L/nix/store/bdsrlavadkx74k9ps4add4g67y569y1r-gcc-13.3.0-libgcc/lib] ==> dir [/nix/store/bdsrlavadkx74k9ps4add4g67y569y1r-gcc-13.3.0-libgcc/lib]
+          arg [-L/nix/store/gycadk6zpxxna884fidy3cg6qpx0cfhn-clang-18.1.8-lib/lib] ==> dir [/nix/store/gycadk6zpxxna884fidy3cg6qpx0cfhn-clang-18.1.8-lib/lib]
+          arg [-L/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0] ==> dir [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0]
+          arg [-L/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0/../../../../lib64] ==> dir [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-dynamic-linker=/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/ld-linux-x86-64.so.2] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_cc31f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0/crtendS.o] ==> obj [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0/crtendS.o]
+          arg [/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/crtn.o] ==> obj [/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/crtn.o]
+        linker tool for 'CXX': /nix/store/99j1fr95xf5xkqgpw5kjwx484118a5xd-binutils-wrapper-2.43.1/bin/ld
+        collapse library dir [/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib] ==> [/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib]
+        collapse library dir [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0] ==> [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0]
+        collapse library dir [/nix/store/w47x7y9xjgq7n3171ckg722ddwf2pi3v-gcc-13.3.0-lib/lib] ==> [/nix/store/w47x7y9xjgq7n3171ckg722ddwf2pi3v-gcc-13.3.0-lib/lib]
+        collapse library dir [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0//lib] ==> [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib]
+        collapse library dir [/nix/store/bdsrlavadkx74k9ps4add4g67y569y1r-gcc-13.3.0-libgcc/lib] ==> [/nix/store/bdsrlavadkx74k9ps4add4g67y569y1r-gcc-13.3.0-libgcc/lib]
+        collapse library dir [/nix/store/gycadk6zpxxna884fidy3cg6qpx0cfhn-clang-18.1.8-lib/lib] ==> [/nix/store/gycadk6zpxxna884fidy3cg6qpx0cfhn-clang-18.1.8-lib/lib]
+        collapse library dir [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0] ==> [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0]
+        collapse library dir [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0/../../../../lib64] ==> [/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/Scrt1.o;/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/crti.o;/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0/crtbeginS.o;/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0/crtendS.o;/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib/crtn.o]
+        implicit dirs: [/nix/store/p9kdj55g5l39nbrxpjyz5wc1m0s7rzsx-glibc-2.40-66/lib;/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib/gcc/x86_64-unknown-linux-gnu/13.3.0;/nix/store/w47x7y9xjgq7n3171ckg722ddwf2pi3v-gcc-13.3.0-lib/lib;/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib;/nix/store/bdsrlavadkx74k9ps4add4g67y569y1r-gcc-13.3.0-libgcc/lib;/nix/store/gycadk6zpxxna884fidy3cg6qpx0cfhn-clang-18.1.8-lib/lib;/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64/gcc/x86_64-unknown-linux-gnu/13.3.0;/nix/store/vl4zvn7ir6y4kzr99709xayck0mal8pn-gcc-13.3.0/lib64;/lib64;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/nix/store/81qcwgdxpwwfs1p0jsqj6kkkyh2v3y0w-cmake-3.30.5/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the CXX compiler's linker: "/nix/store/99j1fr95xf5xkqgpw5kjwx484118a5xd-binutils-wrapper-2.43.1/bin/ld" "-v"
+      GNU ld (GNU Binutils) 2.43.1
+...
