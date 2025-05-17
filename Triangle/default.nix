@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> { } }:
 pkgs.stdenv.mkDerivation {
-  name = "Platformer";
+  name = "Triangle";
   src = ./.;
   nativeBuildInputs = [ pkgs.cmake ];
   buildInputs = [
