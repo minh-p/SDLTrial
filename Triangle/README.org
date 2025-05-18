@@ -5,6 +5,14 @@ While this is a [[https://hamdy-elzanqali.medium.com/let-there-be-triangles-sdl-
 #+BEGIN_SRC sh
 nix-build
 #+END_SRC
+
+Running the project requires you to be in result/bin as the program needs relative path access to the shaders directory.
+
+#+BEGIN_SRC sh
+cd result/bin
+./Triangle
+#+END_SRC
+
 You can also build with cmake. The default.nix is basically a wrapper that downloads the necessary library in order compile this program.
 * Main Idea
 The most striking ideas were that GPUs have to fed information with buffers. Everything first of course starts with the CPU. It gives information to the GPU through buffers. Data first has to first be structured into a transfer buffer. Then a process known as a copy pass is initiated to upload vertices' to the vertex buffer. In this example, the copy pass only occurs once during initialization because the triangle being displayed does not change (except for data from uniform buffer for the pulsing effect). Then, to send information from the vertex buffer, a gpu graphics pipeline has to be established given description of how the vertexs buffer is supposed to look like, and as well how to interpret vertex attributes from shaders. At every render pass, the graphics pipeline is binded and the gpu vertex buffer is binded for each instance at each slot. Creating a triangle only structually needs one slot and one instance. Primitives are then drawn.
