@@ -1,0 +1,16 @@
+#+title: SpriteBatcher
+#+author: minh-p (Vu Huy Minh Pham)
+
+Tutorial following [[https://moonside.games/posts/sdl-gpu-sprite-batcher/][Moonside Games' Tutorial]]
+* Usage
+** Building
+Use nix or cmake. Make sure SDL3 is installed on your system.
+#+BEGIN_SRC sh
+nix-build
+#+END_SRC
+** Running
+#+BEGIN_SRC sh
+cd ./result/bin
+./SpriteBatcher
+#+END_SRC
+* Main Idea (TBA)
