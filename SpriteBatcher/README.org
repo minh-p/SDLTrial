@@ -13,4 +13,35 @@ nix-build
 cd ./result/bin
 ./SpriteBatcher
 #+END_SRC
-* Main Idea (TBA)
+* Conceptual Brief
+While doing [[../Triangle][Triangle]], I've only developed a surface understanding of how vertex buffer and its interaction with the shaders. In order to finish the SpriteBatcher tutorial, I have to use what I learned from my first project to make a sprite batcher. I'm gonna quote important understanding about the vertex buffers and shaders from the tutorial:
+
+#+BEGIN_QUOTE
+A draw call specifies a vertex count. Vertices are taken from a vertex buffer and transformed in parallel by a vertex shader. The resulting triangles from the vertex shader are rasterized (meaning that pixels contained inside the shape are identified). The resulting pixels (or fragments) from the rasterization are then colored in parallel by a fragment shader. Finally, these colors are written to the render target with the selected blend mode.
+
+\mdash [[https://moonside.games/posts/sdl-gpu-sprite-batcher/#encoding-information][Tutorial, Encoding Information]]
+#+END_QUOTE
+
+After knowing the fundamentals, the tutorial says that GPU pipelining becomes more efficient when it is our goal to eliminate state changes. The pipeline would be simply pulling data out of a bound buffer. The [[../Triangle/src/main.cpp][sprite batching method]] I did with the first tutorial is labeled as the old-fashioned way, where I simply build a vertex buffer in CPU code (then later initiate a copy pass). Now, I want to get "an enormous performance boost from leveraging the massively parallel capabilities of the GPU".
+
+#+BEGIN_SRC cpp
+Vertex *data =
+    (Vertex *)SDL_MapGPUTransferBuffer(device, transferBuffer, false);
+
+// Copying every vertex to data. e.g. data[0] = vertices[0]; data[1] =
+// vertices[1]...
+SDL_memcpy(data, vertices, sizeof(vertices));
+
+// Unmapping as we're donig updating the transfer buffer
+SDL_UnmapGPUTransferBuffer(device, transferBuffer);
+#+END_SRC
+
+The new idea is not to rely on the vertex buffer bound:
+
+#+BEGIN_QUOTE
+If there is no vertex buffer input, the vertex shader function can take in an ID and we can build outputs using that ID.
+
+\mdash [[https://moonside.games/posts/sdl-gpu-sprite-batcher/#the-vertex-shader][Tutorial, The Vertex Shader]]
+#+END_QUOTE
+* Things to Learn
+I have already explored the basic setup of the SDL library. The difficult thing about this tutorial is learning the shader language and understanding it. Right now, the tutorial is written in GLSL. I don't want to touch SDL_shadercross. Therefore, I am going to write the shaders in [[https://learnopengl.com/Getting-started/Shaders][GLSL]].
