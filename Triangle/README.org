@@ -1,0 +1,17 @@
+#+title: Triangle
+#+author: minh-p (Vu Huy Minh Pham)
+
+While this is a [[https://hamdy-elzanqali.medium.com/let-there-be-triangles-sdl-gpu-edition-bd82cf2ef615][tutorial]], I learned a lot about setting a C project. This project can be built with.
+#+BEGIN_SRC sh
+nix-build
+#+END_SRC
+You can also build with cmake. The default.nix is basically a wrapper that downloads the necessary library in order compile this program.
+* Main Idea
+The most striking ideas were that GPUs have to fed information with buffers. Everything first of course starts with the CPU. It gives information to the GPU through buffers. Data first has to first be structured into a transfer buffer. Then a process known as a copy pass is initiated to upload vertices' to the vertex buffer. In this example, the copy pass only occurs once during initialization because the triangle being displayed does not change. Then, to send information from the vertex buffer, a gpu graphics pipeline has to be established given description of how the vertexs buffer is supposed to look like, and as well how to interpret vertex attributes from shaders. At every render pass, the graphics pipeline is binded and the gpu vertex buffer is binded for each instance at each slot. Creating a triangle only structually needs one slot and one instance. Primitives are then drawn.
+* Other terms
+There were also some important terms in graphics computing such as:
+1. Command buffer: a buffer or array of commands, a list of tasks expected of the GPU to execute in order. Commands are packed into a single buffer instead of waiting one by one. It's like sending your folks to fend for themselves.
+2. Swapchain texture: buffer that contains textures, which are swapped upon every interval. Thereby enabling the updating of a frame while the other frame is still up, and then simply swapped once everything's ready.
+3. Passes (render passes, copy pass, compute pass): A command buffer consists of passes. There are different kinds of passes. A render pass draw something onto a color target. A compute pass passes heavy calculation to be done on the GPU using compute shaders. Passes can be thought of as different page of a really good book. You can't read two different pages of the book at the same time, so you have to wait for each one to finish: there's a start and an end.
+4. Color Targets: This is where the GPU should draw. Color targets must be defined for there to be a render pass, and as well it's at the end of a GPU graphics pipeline. Images in the swap chain (textures) are what eventually displayed onto the screen. In many graphics API like Vulkan and Direct3D, the swap chain's textures are often used as color targets.
+5. Shaders (vertex, fragment): Shaders are small programs that run on the GPU, being responsible for rendering and manipulating the visual elements of a scene. In this program, vertex shaders and fragment shaders are passed into the graphics pipeline, which of course before then, the graphics pipeline has to be given description of the shaders in order to interpret them. Vertex shader process vertex data to determine the position and transformations of 3D objects. Fragment shaders determine the color and other attributes of individuals on the screen. Fragment shaders first need the outputs of the vertex shaders in order to apply "paint" on the "shape".
