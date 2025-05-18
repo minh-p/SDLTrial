@@ -32,6 +32,13 @@ static Vertex vertices[]{
     {0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f}   // bottom right vertex
 };
 
+struct UniformBuffer {
+  float time;
+  // Other properties can also be put here.
+};
+
+static UniformBuffer timeUniform{};
+
 SDL_Window *window;
 SDL_GPUDevice *device;
 SDL_GPUBuffer *vertexBuffer;
@@ -122,7 +129,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv) {
   fragmentInfo.num_samplers = 0;
   fragmentInfo.num_storage_buffers = 0;
   fragmentInfo.num_storage_textures = 0;
-  fragmentInfo.num_uniform_buffers = 0;
+  fragmentInfo.num_uniform_buffers = 1;
 
   SDL_GPUShader *fragmentShader = SDL_CreateGPUShader(device, &fragmentInfo);
 
@@ -285,6 +292,18 @@ SDL_AppResult SDL_AppIterate(void *appstate) {
 
   // Binding one buffer starting from slot 0.
   SDL_BindGPUVertexBuffers(renderPass, 0, bufferBindings, 1);
+
+  // Uniform buffer. There's no need to create transfer buffers or copy pass.
+  // Uniform buffers are quick!
+
+  // Sending the time since the app has started in seconds.
+  timeUniform.time = SDL_GetTicksNS() / 1e9f;
+  SDL_PushGPUFragmentUniformData(commandBuffer, 0, &timeUniform,
+                                 sizeof(UniformBuffer));
+
+  // I would like to experiment more with Uniform Buffer in my second
+  // repository. Where I would make a project that separates myself away from
+  // this tutorial.
 
   // Finally, we're drawing the triangle!
   SDL_DrawGPUPrimitives(renderPass, 3, 1, 0, 0);
