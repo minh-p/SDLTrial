@@ -32,6 +32,7 @@
               bear
               pkg-config
               shaderc
+              glslang
             ] ++ (if system == "aarch64-darwin" then [ ] else [ gdb ]);
           shellHook = ''
             FLAKE_ROOT="$(git rev-parse --show-toplevel)"

@@ -45,3 +45,43 @@ If there is no vertex buffer input, the vertex shader function can take in an ID
 #+END_QUOTE
 * Things to Learn
 I have already explored the basic setup of the SDL library. The difficult thing about this tutorial is learning the shader language and understanding it. Right now, the tutorial is written in GLSL. I don't want to touch SDL_shadercross. Therefore, I am going to write the shaders in [[https://learnopengl.com/Getting-started/Shaders][GLSL]].
+** std140 GLSL Padding
+std140 states the base alignment of each structure's member is 16 bytes.
+
+vec3 Position - 16 bytes (actually size 12 but auto padded to 16 bytes). 0-15
+float Rotation - 4 bytes. 15-19
+vec2 Scale - 8 bytes. 19-27
+vec2 TexU, TexV, TexW, TexH - 4 * 4 = 16 bytes. 27-43.
+vec4 Color - 16 bytes 43-59
+
+Last offset is 59. The stride is 60 bytes, which is not a multiple of 16. Therefore, a padding of vec2 is needed (+4 bytes). The stride is then 64 bytes which is a multiple of 16.
+
+#+BEGIN_SRC glsl
+// Must Follow GLSL std140
+layout(std140, binding = 0) buffer SpriteBuffer {
+    struct SpriteData {
+        vec3 Position;
+        float Rotation;
+        vec2 Scale;
+        // The padding needed for std140. Must align to 16 bytes.
+        vec2 Padding;
+        float TexU, TexV, TexW, TexH;
+        vec4 Color;
+    };
+    // Compared to a uniform buffer, we don't have to specify instance count.
+    // The equivalent of a StructuredBuffer (HLSL) in GLSL is Shader Storage Buffer Object.
+    // https://www.khronos.org/opengl/wiki/Shader_Storage_Buffer_Object.
+    // There can only be on array of variable size.
+    // It has to be the bottommost variable.
+    SpriteData DataBuffer[];
+}
+#+END_SRC
+*** std 140 Base Alignment
+- Scalars (bool, int, uint, float): 4 bytes.
+- 2 Components Vectors (vec2, ivec2, uvec2, bvec2): 8 bytes.
+- 3 Component Vectors (vec3, ivec3, uvec3, bvec3): 16 bytes (12 bytes in size but [auto] padded to 16 bytes).
+- 4 Component Vectors (vec4, ivec4, uvec4, bvec4): 16 bytes.
+- matCxR (C columns, R rows). Each row/column vector has a base alignment of 16 bytes.
+  - Column-major: Treated like an array of C vecR. Same as base alignment of its column vector.
+  - Row-major: Treated like an array of R vecC. Same as base alignment of its row vector.
+- Structures: the largest base alignment of any of its members, rounded up to the size of a vec4 (16 bytes).
